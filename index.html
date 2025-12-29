@@ -158,13 +158,20 @@
             -webkit-transition: all 0.3s ease 0s;
             -o-transition: all 0.3s ease 0s;
             transition: all 0.3s ease 0s;
+            height: 100%;
         }
 
         .txt2_is_show.is_show:before {
             height: calc(100% - 40px);
         }
 
-        /* .single-service:before {
+        .srvc-content {
+    overflow: hidden;
+}
+
+
+
+        .single-service:before {
             content: '';
             position: absolute;
             left: 40px;
@@ -176,9 +183,9 @@
             -webkit-transition: all 0.8s ease 0s;
             -o-transition: all 0.8s ease 0s;
             transition: all 0.8s ease 0s;
-        } */
+        } 
 
-        /* .single-service:after {
+        .single-service:after {
             content: '';
             position: absolute;
             left: 35px;
@@ -187,12 +194,11 @@
             width: 10px;
             border-radius: 50%;
             background: #d0cdcd;
-        } */
+        }
 
         .single-service .icon {
             float: left;
             margin-right: 17px;
-            margin-top: 10px;
             background: #fff;
         }
 
@@ -302,6 +308,9 @@
             line-height: 70px;
             box-shadow: 0px -2px 9.9px 0.1px rgba(186, 187, 188, 0.25);
             font-size: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .copyright {
@@ -352,6 +361,58 @@
 .white_svg {
     bottom: -1px;
     position: relative;
+}
+
+.prt-item a img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.prt-item a:hover {
+    box-shadow: 0px 10px 27px rgba(0, 0, 0, 0.1);
+}
+
+.prt-item {
+    margin-bottom: 30px;
+}
+.prt-item a {
+    display: block;
+}
+a:hover, a:active {
+    color: #ffb607;
+    text-decoration: none;
+    outline: 0;
+}
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+a, a:visited {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    outline: 0;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
 }
     </style>
     
@@ -408,11 +469,9 @@
                         <div class="section-title">
                             <h2 class="txt2_is_show is_show">About Us</h2>
                         </div>
-                        <p class="txt-wrap"><b>Evolve Experiences, Designing Tomorrow's Interface Today</b></p>
+                        <!-- <p class="txt-wrap"><b>Evolve Experiences, Designing Tomorrow's Interface Today</b></p> -->
                         <p class="txt-wrap">
-                            Elevate your digital journey with Evolve Experiences, where innovation meets design
-                            excellence. Crafting tomorrow's interfaces today, we redefine user experiences with
-                            creativity and precision.
+                           At Evolver Edge, we elevate your digital journey by blending innovation with design excellence. As a forward-thinking design studio, we specialize in creating intuitive, user-centric interfaces that make meaningful digital experiences. From responsive website design to bespoke application and logo design, our creative expertise helps brands connect with users through thoughtful and impactful visual solutions. With precision, passion, and a commitment to quality, we craft experiences that reflect your vision and drive digital success.
                         </p>
                     </div>
                 </div>
@@ -423,10 +482,10 @@
     </div>
     <div class="service-area">
         <div class="container pb--200">
-            <div class="row">
-                <div class="col-md-4">
+            <div class="row d-flex">
+                <div class="col-md-4 align-self-stretch">
                     <div class="single-service txt2_is_show is_show">
-                        <!-- <div class="icon"><span class="flaticon-web-design"></span></div> -->
+                        <div class="icon"><img src="./assets/images/icons/app.png" /></div>
                         <div class="srvc-content">
                             <h4>Website Design</h4>
                             <p>Crafting innovative, user-centric websites for an unforgettable online experience
@@ -434,9 +493,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 align-self-stretch">
                     <div class="single-service txt2_is_show is_show">
-                        <!-- <div class="icon"><span class="flaticon-settings"></span></div> -->
+                        <div class="icon"><img src="./assets/images/icons/mobile.png" /></div>
                         <div class="srvc-content">
                             <h4>Application Design</h4>
                             <p>Enhance your digital footprint with our meticulously crafted mobile solutions,
@@ -444,9 +503,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 align-self-stretch">
                     <div class="single-service txt2_is_show is_show">
-                        <!-- <div class="icon"><span class="flaticon-adobe"></span></div> -->
+                        <div class="icon"><img src="./assets/images/icons/logo.png" /></div>
                         <div class="srvc-content">
                             <h4>Logo Design</h4>
                             <p>Elevate your brand presence through our unique logo designs, where creativity and
@@ -469,54 +528,81 @@
                 <div class="section-title">
                     <h2 class="txt2_is_show is_show">Our Portfolio</h2>
                 </div>
-                <div class="fortfolio-filter">
-                    <button class="active" data-filter="*">All</button>
-                    <button data-filter=".web">Web Design</button>
-                    <button data-filter=".design">Graphics Design</button>
-                    <button data-filter=".marketing">Marketing</button>
-                </div>
-                <div class="portfolio-masonary row" id="container" style="position: relative; height: 760px;">
-                    <div class="prt-grid marketing design col-md-4 col-sm-6"
-                        style="position: absolute; left: 0%; top: 0px;">
+                
+                <div class="portfolio-masonary row" id="container" style="position: relative; ">
+                    <div class="prt-grid marketing design col-md-4 col-sm-6">
                         <div class="prt-item">
                             <a class="expand-video" href="https://www.youtube.com/watch?v=eDiA1p5DlLg">
                                 <span class="flaticon-play-button"></span>
-                                <img src="assets/img/portfolio/img1.jpg" alt="image">
+                                <img src="./assets/images/portfolio/AI Powered Consultant Chat Widgets.png" alt="image">
                             </a>
                         </div>
                     </div>
-                    <div class="prt-grid marketing web col-md-4 col-sm-6"
-                        style="position: absolute; left: 33.3333%; top: 0px;">
+                    <div class="prt-grid marketing web col-md-4 col-sm-6">
                         <div class="prt-item">
-                            <a class="expand-img" href="assets/img/portfolio/img2.jpg"><img
-                                    src="assets/img/portfolio/img2.jpg" alt="image"></a>
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Analytics.png" alt="image"></a>
                         </div>
                     </div>
-                    <div class="prt-grid col-md-4 col-sm-6" style="position: absolute; left: 66.6667%; top: 0px;">
+                    <div class="prt-grid col-md-4 col-sm-6" >
                         <div class="prt-item">
-                            <a class="expand-img" href="assets/img/portfolio/img3.jpg"><img
-                                    src="assets/img/portfolio/img3.jpg" alt="image"></a>
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Bhaskar Ad Booking (Responsive Design).png" alt="image"></a>
                         </div>
                     </div>
-                    <div class="prt-grid design marketing col-md-4 col-sm-6"
-                        style="position: absolute; left: 0%; top: 380px;">
+                    <div class="prt-grid design marketing col-md-4 col-sm-6">
                         <div class="prt-item">
-                            <a class="expand-img" href="assets/img/portfolio/img4.jpg"><img
-                                    src="assets/img/portfolio/img4.jpg" alt="image"></a>
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Bus Booking App.png" alt="image"></a>
                         </div>
                     </div>
-                    <div class="prt-grid web design col-md-4 col-sm-6"
-                        style="position: absolute; left: 33.3333%; top: 380px;">
+                    <div class="prt-grid web design col-md-4 col-sm-6">
                         <div class="prt-item">
-                            <a class="expand-img" href="assets/img/portfolio/img5.jpg"><img
-                                    src="assets/img/portfolio/img5.jpg" alt="image"></a>
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/CampusNexus.png" alt="image"></a>
                         </div>
                     </div>
-                    <div class="prt-grid design marketing col-md-4 col-sm-6"
-                        style="position: absolute; left: 66.6667%; top: 380px;">
+                    <div class="prt-grid design marketing col-md-4 col-sm-6">
                         <div class="prt-item">
-                            <a class="expand-img" href="assets/img/portfolio/img6.jpg"><img
-                                    src="assets/img/portfolio/img6.jpg" alt="image"></a>
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Ex-Bags.png" alt="image"></a>
+                        </div>
+                    </div>
+
+                     <div class="prt-grid design marketing col-md-4 col-sm-6">
+                        <div class="prt-item">
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Flowchart & Service Blueprint.png" alt="image"></a>
+                        </div>
+                    </div>
+                    <div class="prt-grid web design col-md-4 col-sm-6">
+                        <div class="prt-item">
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Freelance Sprint Hub.png" alt="image"></a>
+                        </div>
+                    </div>
+                    <div class="prt-grid design marketing col-md-4 col-sm-6">
+                        <div class="prt-item">
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Language Learning App.png" alt="image"></a>
+                        </div>
+                    </div>
+                     <div class="prt-grid design marketing col-md-4 col-sm-6">
+                        <div class="prt-item">
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/NCPDP - Pharmacy Ecosystem.png" alt="image"></a>
+                        </div>
+                    </div>
+                    <div class="prt-grid web design col-md-4 col-sm-6">
+                        <div class="prt-item">
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Room Planner - AI.png" alt="image"></a>
+                        </div>
+                    </div>
+                    <div class="prt-grid design marketing col-md-4 col-sm-6">
+                        <div class="prt-item">
+                            <a class="expand-img"><img
+                                    src="./assets/images/portfolio/Video Editor.png" alt="image"></a>
                         </div>
                     </div>
                 </div>
@@ -591,7 +677,7 @@
                     </div>
                 </div>
                 <div class="go-to-top">
-                    <a href="#top"><i class="fa fa-angle-up"></i></a>
+                    <a href="#"><img src="./assets/images/icons/up.svg" /></a>
                 </div>
             </div>
         </div>
