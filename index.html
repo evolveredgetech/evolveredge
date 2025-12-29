@@ -414,6 +414,18 @@ a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
 }
+
+.header-area .logo{
+    width: 150px;
+    transition: all 0.2s ease;
+}
+
+/* Optional: reduce menu padding when scrolling */
+.header-area .logo.small-logo {
+   width: 100px;
+
+}
+
     </style>
     
 </head>
@@ -426,7 +438,7 @@ a {
                     <div style="" class="container">
                         <div
                             style="padding: 10px 0px;display: flex; justify-content: space-between; align-self: center;">
-                            <img style="width: 150px;" src="./assets/images/logo.svg" />
+                            <img class="logo" src="./assets/images/logo.svg" />
                             <div>
                                 <div class="main-menu">
                                     <nav class="nav-menu">
@@ -682,6 +694,18 @@ a {
             </div>
         </div>
     </footer>
+
+    <script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header-area .logo");
+
+        if (window.scrollY > 50) {   // scroll 50px
+            header.classList.add("small-logo");
+        } else {
+            header.classList.remove("small-logo");
+        }
+    });
+</script>
 </body>
 
 </html>
