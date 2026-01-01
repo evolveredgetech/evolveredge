@@ -129,7 +129,7 @@
 
                 <div class="portfolio-area portfolio-masonary row" id="container">
                     <div class="prt-grid marketing design col-md-4 col-sm-6">
-                        <div class="prt-item" >
+                        <div class="prt-item">
                             <a class="expand-video" href="https://www.youtube.com/watch?v=eDiA1p5DlLg">
                                 <span class="flaticon-play-button"></span>
                                 <img src="./assets/images/portfolio/AI Powered Consultant Chat Widgets.png" alt="image">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <div class="prt-grid marketing web col-md-4 col-sm-6">
-                        <div class="prt-item" >
+                        <div class="prt-item">
                             <a class="expand-img">
                                 <img src="./assets/images/portfolio/Analytics.png" alt="image">
                                 <div class="heading-text">
@@ -152,19 +152,17 @@
                     <div class="prt-grid col-md-4 col-sm-6">
                         <div class="prt-item">
                             <a class="expand-img">
-                                <img
-                                    src="./assets/images/portfolio/Bhaskar Ad Booking (Responsive Design).png"
+                                <img src="./assets/images/portfolio/Bhaskar Ad Booking (Responsive Design).png"
                                     alt="image">
                                 <div class="heading-text">
                                     <span>Bhaskar Ad Booking (Responsive Design)</span>
                                 </div>
-                                </a>
+                            </a>
                         </div>
                     </div>
                     <div class="prt-grid design marketing col-md-4 col-sm-6">
                         <div class="prt-item">
-                            <a class="expand-img"><img src="./assets/images/portfolio/Bus Booking App.png"
-                                    alt="image">
+                            <a class="expand-img"><img src="./assets/images/portfolio/Bus Booking App.png" alt="image">
                                 <div class="heading-text">
                                     <span>Bus Booking App</span>
                                 </div>
@@ -207,7 +205,7 @@
                                 <div class="heading-text">
                                     <span>Freelance Sprint Hub</span>
                                 </div>
-                                </a>
+                            </a>
                         </div>
                     </div>
                     <div class="prt-grid design marketing col-md-4 col-sm-6">
@@ -237,7 +235,7 @@
                                 <div class="heading-text">
                                     <span>Room Planner - AI</span>
                                 </div>
-                                </a>
+                            </a>
                         </div>
                     </div>
                     <div class="prt-grid design marketing col-md-4 col-sm-6">
@@ -332,6 +330,8 @@
         </div>
     </footer>
 
+    <div id="toast" class="toast "></div>
+
     <script>
         window.addEventListener("scroll", function () {
             const header = document.querySelector(".header-area .logo");
@@ -345,32 +345,45 @@
 
 
         const form = document.getElementById("cf");
-// const msgBox = document.getElementById("formMessage");
+        // const msgBox = document.getElementById("formMessage");
 
-form.addEventListener("submit", async function(e) {
-    e.preventDefault(); // Stop normal submit
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault(); // Stop normal submit
 
-    const formData = new FormData(form);
+            const formData = new FormData(form);
 
-    // Google Form "formResponse" URL
-    const url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfGxACW5sl1nlOyjf8uVC9NGvr3U5u1uq8INe5IjKVSTm5ZJw/formResponse";
+            // Google Form "formResponse" URL
+            const url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfGxACW5sl1nlOyjf8uVC9NGvr3U5u1uq8INe5IjKVSTm5ZJw/formResponse";
 
-    // msgBox.innerHTML = "Submitting...";
+            // msgBox.innerHTML = "Submitting...";
 
-    try {
-        await fetch(url, {
-            method: "POST",
-            mode: "no-cors",
-            body: formData
+            try {
+                await fetch(url, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: formData
+                });
+
+                // msgBox.innerHTML = "✅ Thank you! Your message has been sent.";
+                showToast("Thank you! Your message has been sent.", "success");
+                form.reset();
+
+            } catch (error) {
+                showToast("Something went wrong. Please try again.", "error");
+                // msgBox.innerHTML = "❌ Something went wrong. Please try again.";
+            }
         });
 
-        // msgBox.innerHTML = "✅ Thank you! Your message has been sent.";
-        form.reset();
+        function showToast(message, type = "success") {
+            const toast = document.getElementById("toast");
 
-    } catch (error) {
-        // msgBox.innerHTML = "❌ Something went wrong. Please try again.";
-    }
-});
+            toast.textContent = message;
+            toast.className = "toast show " + type;
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 10000);
+        }
 
     </script>
 </body>
