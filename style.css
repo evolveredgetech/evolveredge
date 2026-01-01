@@ -3,7 +3,7 @@
 ----------------------------------- */
 @font-face {
   font-family: 'Tribal-Inter';
-  src: url('/public/assets/fonts/Google_Sans_Flex/GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf') format('woff2');
+  src: url('../assetss/fonts/Google_Sans_Flex/GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf') format('woff2');
 }
 
 
@@ -85,7 +85,7 @@ a:hover, a:active {
   height: 800px;
   display: flex;
   align-items: center;
-  background: url('/public/assets/images/UI.png') no-repeat center right 10%;
+  background: url('../assetss/images/UI.png') no-repeat center right 10%;
   position: relative;
 }
 
