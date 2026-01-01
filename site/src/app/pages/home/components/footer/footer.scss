@@ -1,3 +1,4 @@
+@use '../../../../../../public/assets/scss/breakpoints.scss' as *;
 
 /* -----------------------------------
    FOOTER
@@ -6,18 +7,67 @@
   position: absolute;
   left: calc(50% - 35px);
   top: -35px;
-  height: 70px; width: 70px;
+  height: 70px;
+  width: 70px;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   font-size: 27px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #333;
+
+  @media #{ $phone } {
+    height: 50px;
+    width: 50px;
+    top: -25px;
+    left: calc(50% - 30px);
+  }
 }
 
-.copyright { text-align: right; }
+.flogo{
+  @media #{ $phone} {
+    //  display: flex;
+    // justify-content: center;
+    // text-align: center;
+  }
+  img{
+  width: 100px;
+  @media #{ $phone } {
+    width: 80px;
+    // margin-top: 20px;
+
+  }
+}
+}
+
+.align-items-center {
+  @media #{ $phone} {
+    display: flex;
+    margin-top: 20px;
+    .col-md-6 {
+     flex: 1;
+     &.col-sm-8 {
+        flex: 2.5;
+        p {
+          margin: 0;
+        }
+     }
+    }
+  }
+}
+
+.copyright {
+  text-align: right;
+
+  @media #{ $phone } {
+    // text-align: center;
+    // margin-top: 20px;
+    font-size: 12px;
+
+  }
+}
 
 
 .footer-area {
@@ -25,5 +75,6 @@
   position: relative;
 }
 
-.bg-gray { background: #f9f9f9; }
-
+.bg-gray {
+  background: #f9f9f9;
+}

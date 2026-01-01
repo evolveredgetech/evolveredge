@@ -48,3 +48,8 @@
 
 
 
+
+.txt2_is_show.is_show:before {
+    height: calc(100% - 40px);
+    z-index: -1;
+}

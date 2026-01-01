@@ -1,0 +1,10 @@
+@use '../../../../../../public/assets/scss/breakpoints.scss' as *;
+
+
+img {
+  @media #{ $phone} {
+    display: none;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}

@@ -1,3 +1,5 @@
+@use '../../../../../../public/assets/scss/breakpoints.scss' as *;
+
 /* -----------------------------------
    HEADER
 ----------------------------------- */
@@ -13,8 +15,16 @@
     width: 150px;
     transition: all .2s ease;
 
+    @media #{ $phone } {
+      width: 70px;
+    }
+
     &.small-logo {
       width: 100px;
+
+      @media #{ $phone } {
+        width: 70px;
+      }
     }
   }
 }
@@ -24,6 +34,10 @@
 ----------------------------------- */
 .main-menu nav ul {
   text-align: right;
+
+  @media #{ $phone } {
+    padding-left: 0px;
+  }
 
   li {
     display: inline-block;
@@ -35,14 +49,25 @@
       padding: 35px 17px;
       display: block;
       text-decoration: none;
+
+      @media #{ $phone } {
+        padding: 15px 8px;
+      }
     }
   }
 }
 
 
+
 /* -----------------------------------
    HERO / SLIDER
 ----------------------------------- */
+.slider-content {
+  @media #{ $phone } {
+    margin-top: -180px;
+  }
+}
+
 .slider-area {
   height: 800px;
   display: flex;
@@ -50,12 +75,28 @@
   background: url('/assets/images/UI.png') no-repeat center right 10%;
   position: relative;
 
+  @media #{ $phone } {
+    height: 100vh;
+    width: 100%;
+    background-position: calc(100% - 25px) calc(100% - 40px);
+    background-size: 350px;
+  }
+
+  @media #{ $tablet} {
+    background-size: 300px;
+  }
+
   h2 {
     font-size: 55px;
     color: #fff;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 10px;
+
+    @media #{ $phone } {
+      font-size: 36px;
+      text-align: center;
+    }
   }
 
   h4 {
@@ -64,5 +105,10 @@
     color: #fff;
     line-height: 41px;
     text-transform: uppercase;
+
+    @media #{ $phone } {
+      font-size: 16px;
+      text-align: center;
+    }
   }
 }
