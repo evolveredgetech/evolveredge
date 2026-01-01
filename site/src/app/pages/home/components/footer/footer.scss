@@ -1,0 +1,29 @@
+
+/* -----------------------------------
+   FOOTER
+----------------------------------- */
+.go-to-top a {
+  position: absolute;
+  left: calc(50% - 35px);
+  top: -35px;
+  height: 70px; width: 70px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  font-size: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.copyright { text-align: right; }
+
+
+.footer-area {
+  padding: 18px 0;
+  position: relative;
+}
+
+.bg-gray { background: #f9f9f9; }
+

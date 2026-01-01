@@ -1,0 +1,68 @@
+/* -----------------------------------
+   TOAST NOTIFICATION
+----------------------------------- */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  padding: 14px 20px;
+  background: #333;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  z-index: 99999;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &.success {
+    background: #2ad157;
+  }
+
+  &.error {
+    background: #f16565;
+  }
+}
+
+
+/* -----------------------------------
+   CONTACT FORM
+----------------------------------- */
+.contact-form {
+
+  input,
+  textarea {
+    width: 100%;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 13px;
+    height: 34px;
+  }
+
+  textarea {
+    height: 87px;
+  }
+
+  .form-submit {
+    text-align: right;
+  }
+
+  button {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 12px;
+  }
+}

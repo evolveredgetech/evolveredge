@@ -1,0 +1,68 @@
+/* -----------------------------------
+   HEADER
+----------------------------------- */
+.header-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #202020;
+
+  .logo {
+    width: 150px;
+    transition: all .2s ease;
+
+    &.small-logo {
+      width: 100px;
+    }
+  }
+}
+
+/* -----------------------------------
+   MENU
+----------------------------------- */
+.main-menu nav ul {
+  text-align: right;
+
+  li {
+    display: inline-block;
+
+    a {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 35px 17px;
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/* -----------------------------------
+   HERO / SLIDER
+----------------------------------- */
+.slider-area {
+  height: 800px;
+  display: flex;
+  align-items: center;
+  background: url('/assets/images/UI.png') no-repeat center right 10%;
+  position: relative;
+
+  h2 {
+    font-size: 55px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-size: 19px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 41px;
+    text-transform: uppercase;
+  }
+}
