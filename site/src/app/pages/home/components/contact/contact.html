@@ -29,6 +29,11 @@
               </div>
             </div>
             <textarea [(ngModel)]="data.message" placeholder="Message Here*"></textarea>
+
+            @if(showToast) {
+<div id="toast" class=" show success visible-phone" style="margin-bottom: 20px; color: #fff; padding: 10px; border-radius: 10px; background-color: #2ad157;">Thank you! Your message has been sent.</div>
+}
+
             <div class="form-submit">
               <button name="submit" (click)="onSubmit()">Send Message <i class="fa fa-long-arrow-right"></i></button>
             </div>
@@ -42,5 +47,5 @@
 </section>
 
 @if(showToast) {
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast show success">Thank you! Your message has been sent.</div>
 }
