@@ -1,0 +1,28 @@
+$phone: "only screen and (max-width: 600px)" !default;
+$tablet: "only screen and (min-width: 600px) and (max-width: 1200px)" !default;
+$desktop: "only screen and (min-width: 1201px)" !default;
+
+
+@mixin hide-at($breakpoint) {
+  @media #{ $breakpoint } {
+    display: none !important;
+  }
+}
+
+@mixin show-at($breakpoint) {
+  display: none !important;
+
+  @media #{ $breakpoint } {
+    display: block !important;
+  }
+}
+
+
+.hidden-phone   { @include hide-at($phone); }
+.visible-phone  { @include show-at($phone); }
+
+.hidden-tablet  { @include hide-at($tablet); }
+.visible-tablet { @include show-at($tablet); }
+
+.hidden-desktop { @include hide-at($desktop); }
+.visible-desktop { @include show-at($desktop); }
